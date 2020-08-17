@@ -34,3 +34,8 @@ app.get("/", (req, res) => {
 app.get("/mainuserpage", (req, res) => {
     res.sendFile(__dirname + "/mainuser.html");
 });
+
+
+app.get("/chatbot", (req, res) => {
+  res.sendFile(__dirname + "/chatbot.html");
+});
