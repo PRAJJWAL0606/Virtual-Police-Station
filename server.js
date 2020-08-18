@@ -39,3 +39,18 @@ app.get("/mainuserpage", (req, res) => {
 app.get("/chatbot", (req, res) => {
   res.sendFile(__dirname + "/chatbot.html");
 });
+
+
+app.get("/policestationmain", (req, res) => {
+  res.sendFile(__dirname + "/policestationmain.html");
+});
+
+
+app.get("/firtracking", (req, res) => {
+  res.sendFile(__dirname + "/FIRtracking.html");
+});
+
+
+app.get("/filefir", (req, res) => {
+  res.sendFile(__dirname + "/FIRfiling.html");
+});

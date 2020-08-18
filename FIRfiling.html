@@ -12,27 +12,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
-    .col-4 {
-        background: white;
-        height: 50vh;
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-        box-shadow: 0px 28px 24px 3px rgba(0, 0, 0, 0.2) !important;
-        border-radius: 0px 0px 20px 20px;
-        padding: 0 !important;
+    .list-group-item{
+        margin-bottom:20px !important;
     }
-
-    .col-8 {
-        background: white;
-        height: 10vh;
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-        margin-top: 20px;
-        flex: 0 0 100% !important;
-        box-shadow: 0px 0px 40px 3px rgba(0, 0, 0, 0.2) !important;
-        border-radius: 20px;
-    }
-
     .navbar {
         padding: 15px 10px;
         background: white !important;
@@ -43,76 +25,38 @@
         box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
         margin: 0 !important;
     }
-
-    .botreplydiv {
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    .bot {
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        margin: 10px;
-        box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.2);
-    }
-
-    #botreply {
-        align-items: flex-start;
-        margin: 10px
-    }
-
-    .userreplydiv {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .user {
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        margin: 10px;
-        box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.2);
-    }
-
-    #userreply {
-        align-items: flex-end;
-        margin: 10px
-    }
-
-    #chatbotdiv {
-        z-index: 0;
-        margin-bottom: -24px;
-        height: 13vh;
-        background-color: rgb(113, 96, 255) !important;
-    }
-
-    #chatbotcontent {
-        background: rgb(113, 96, 255);
-        border: none;
-        color: white;
-        text-align: center;
-        font-size: 30px;
-        padding: 9px;
-    }
-
-    .messageinput {
-        padding: 10px;
-        border-radius: 16px;
-        margin: 10px;
-        height: 50px;
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        width: 93%;
-    }
-
-    .buttoncircle {
-        height: 50px;
-        width: 50px;
-        border:none;
-        border-radius: 40px;
-        margin: 10px;
-        background-color: rgb(43, 39, 75);
-    }
+    .col-4 {
+        -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 98.5%;
+    max-width: 100%;
+    margin: 10px 12px -11px 10px;
+    background: rgb(113,96,255);
+    z-index: 4;
+    height: 58px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 27px;
+    /* padding: 10px; */
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px;
+}
+.col {
+    overflow-y:scroll;
+    overflow-x:hidden;
+    box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    height: 490px;
+    background: white;
+    border-radius: 0px 0px 20px 20px;
+}
 </style>
 
 <body>
@@ -181,30 +125,60 @@
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-8" id="chatbotdiv">
-                        <li class="list-group-item" id="chatbotcontent">Virtual Chatbot</li>
+                    <div class="col-4">
+                      File Your FIR
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4" style="overflow-y: scroll !important;">
-                        <div class="botreplydiv">
-                            <img src="https://www.pngitem.com/pimgs/m/73-732620_transparent-call-center-agent-clipart-call-center-agent.png"
-                                alt="Avatar" class="bot">
-                            <li class="list-group-item" id="botreply">Cras justo odio
-                            </li>
+                  <div class="col">
+                    <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                          </div>
                         </div>
-                        <div class="userreplydiv">
-                            <li class="list-group-item" id="userreply">Cras justo odio</li>
-                            <img src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
-                                alt="Avatar" class="user">
+                        <div class="form-group">
+                          <label for="inputAddress">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-8" style="padding: 0 !important;display:flex">
-                        <input type="text" id="message" class="messageinput" placeholder="Send message">
-                        <button class="buttoncircle"><i class="fa fa-paper-plane" aria-hidden="true" style="margin: 5px;font-size: 19px;color: white;"></i></button>
-                    </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Address 2</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>...</option>
+                            </select>
+                          </div>
+                          <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                              Check me out
+                            </label>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                      </form>
+                  </div>
+                  
                 </div>
             </div>
         </div>
