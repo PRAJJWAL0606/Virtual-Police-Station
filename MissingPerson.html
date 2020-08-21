@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Virtual Police</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .heading{
+        background: rgb(113,96,255);
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    position: fixed;
+  width: 25%;
+  z-index: 2;
+    }
+    ul{
+        padding-top: 60px !important;
+    }
+    .col-8{
+        background: white;
+    height: 550px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.1);
+    flex: 0 0 63.66667%;
+    max-width: 63.66667%;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    }
+
+    .col-4{
+        
+        background: white;
+    margin: 5px;
+    height: 550px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.1);
+    padding:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    }
+    .navbar {
+        padding: 15px 10px;
+        background: white !important;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 1px 1px 22px rgba(0, 0, 0, 1.4) !important;
+        box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
+        margin: 0 !important;
+    }
+    .card{
+        max-width: 100% !important;
+    margin: 20px !important;
+    }
+    ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-control{
+    background:#eee;
+}
+form{
+    padding:20px
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius:40px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius:40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Bootstrap
+        </a>
+    </nav>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo">Palla Police Station</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/policestationmain">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">FIR</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="/filefir">File FIR</a>
+                            </li>
+                            <li>
+                                <a href="/firtracking">Track FIR</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/chatbot">Help</a>
+                    </li>
+                    <li>
+                        <a href="/missingperson">Missing People</a>
+                    </li>
+                    <li>
+                        <a href="/wantedcriminals">Wanted Criminals</a>
+                    </li>
+                    <li>
+                        <a href="/lostandfound">Lost and Found</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="heading" style="width: 47.4% !important;">Missing People Found</div>
+                    <ul class="list-group">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://cms.qz.com/wp-content/uploads/2018/12/earring2.png?w=450&h=463&crop=1&strip=all&quality=75" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://icdn5.digitaltrends.com/image/screen-shot-2019-02-15-at-19-16-58-720x720.jpg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-2-1.jpeg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                      </ul>
+
+                  </div>
+                  <div class="col-4">
+                    <div class="heading">Missing Person Report</div>
+                    <div style="margin-top:60px">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                              </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlInput1">Email address</label>
+                              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect1">Example select</label>
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect2">Example multiple select</label>
+                              <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Example textarea</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                                <div class="col-sm-10">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                      First radio
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                      Second radio
+                                    </label>
+                                  </div>
+                                  <div class="form-check disabled">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                    <label class="form-check-label" for="gridRadios3">
+                                      Third disabled radio
+                                    </label>
+                                  </div>
+                                </div>
+                              
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleFormControlFile1">Example file input</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                              </div>
+                              <button type="submit" class="btn btn-primary">Submit</button>
+                            
+                          </form>
+                        
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>
+
+
+

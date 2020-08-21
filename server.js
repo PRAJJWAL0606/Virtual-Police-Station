@@ -54,3 +54,18 @@ app.get("/firtracking", (req, res) => {
 app.get("/filefir", (req, res) => {
   res.sendFile(__dirname + "/FIRfiling.html");
 });
+
+
+app.get("/missingperson", (req, res) => {
+  res.sendFile(__dirname + "/MissingPerson.html");
+});
+
+
+app.get("/lostandfound", (req, res) => {
+  res.sendFile(__dirname + "/Lostandfound.html");
+});
+
+
+app.get("/wantedcriminals", (req, res) => {
+  res.sendFile(__dirname + "/WantedCriminals.html");
+});
