@@ -69,3 +69,22 @@ app.get("/lostandfound", (req, res) => {
 app.get("/wantedcriminals", (req, res) => {
   res.sendFile(__dirname + "/WantedCriminals.html");
 });
+
+
+app.get("/policestationadmin", (req, res) => {
+  res.sendFile(__dirname + "/PoliceStationAdmin.html");
+});
+
+
+app.get("/adminfirtracking", (req, res) => {
+  res.sendFile(__dirname + "/PoliceAdminFIRTracking.html");
+});
+
+
+app.get("/admininmatetracking", (req, res) => {
+  res.sendFile(__dirname + "/PoliceAdminInmate.html");
+});
+
+app.get("/admincriminaltracking", (req, res) => {
+  res.sendFile(__dirname + "/PoliceAdminCriminal.html");
+});
