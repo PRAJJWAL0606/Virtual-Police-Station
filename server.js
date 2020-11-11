@@ -4,16 +4,22 @@ const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const mongodb = require("mongodb");
 const app = express();
+const dialogflow = require('dialogflow');
+// const { uuid } = require('uuidv4');
+const uuid = require('uuid');
+// const newUuid = uuid.v1();
+// uuid = newUuid;
+
 const PORT = process.env.port || 8080;
 app.use(express.static("public"));
-
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 let db;
-const url =
-  "mongodb://ThaparUser:Pass123#@ds035776.mlab.com:35776/virtualpolice";
+const url = "mongodb://ThaparUser:Pass123%23@virtualpolice-shard-00-00.6lhbw.mongodb.net:27017,virtualpolice-shard-00-01.6lhbw.mongodb.net:27017,virtualpolice-shard-00-02.6lhbw.mongodb.net:27017/virtualpolice?ssl=true&replicaSet=atlas-o4o463-shard-0&authSource=admin&retryWrites=true&w=majority";
+
+
 
 MongoClient.connect(url, (err, database) => {
   if (err) {
@@ -87,4 +93,91 @@ app.get("/admininmatetracking", (req, res) => {
 
 app.get("/admincriminaltracking", (req, res) => {
   res.sendFile(__dirname + "/PoliceAdminCriminal.html");
+});
+
+
+var userid=null;
+var policestationid=null;
+
+app.post("/login", (req, res) => {
+  var username = req.body.username;
+  var password = req.body.password;
+  var role = req.body.role;
+
+  db.collection("userDetails").find({username:username, password:password, role:role}).toArray((err, result) => {
+    if (err){
+      res.send(err);
+    } 
+    else{
+      userid = result[0]._id;
+      res.send(result);
+    }
+  });
+
+});
+
+async function runSample(msg,projectId="virtual-police-pekl") {
+  
+  const sessionId = uuid.v4();
+  const sessionClient = new dialogflow.SessionsClient({
+    keyFilename:"F:/Software Engineering Project/Virtual_Police/public/virtual-police-pekl-b730ed1455dd.json"
+  });
+  const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+ 
+  const request = {
+    session: sessionPath,
+    queryInput: {
+      text: {
+        text: msg,
+        languageCode: 'en-US',
+      },
+    },
+  };
+ 
+  // Send request and log result
+  const responses = await sessionClient.detectIntent(request);
+  const result = responses[0].queryResult;
+  return result.fulfillmentText;
+
+}
+
+app.get('/getbotresponse', (req,res) => {
+   var result;
+  runSample(req.query.message).then(data=>{
+      // console.log(data);
+      result = data;
+      res.send([{response:result}]);
+  });
+});
+
+
+
+
+app.post("/filefir", (req, res) => {
+  var newfir = req.body;
+  
+  var fir = {
+    policeStationid:policestationid,
+    userid:userid,
+    subject:newfir.subject,
+    type:newfir.type,
+    image:newfir.type,
+    description:newfir.description,
+    message:message,
+    status:"Filed"
+  }
+
+  db.collection("FIR").save(fir, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("click added to db");
+    res.send([
+      {
+        message: "Request successfully logged",
+        status: true,
+      },
+    ]);
+  });
+
 });

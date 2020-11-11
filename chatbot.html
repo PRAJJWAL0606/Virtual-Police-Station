@@ -5,9 +5,8 @@
     <title>Virtual Police</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -118,8 +117,8 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                class="d-inline-block align-top" alt="">
+            <!-- <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt=""> -->
             Bootstrap
         </a>
     </nav>
@@ -175,32 +174,34 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4" style="overflow-y: scroll !important;">
-                        <div class="botreplydiv">
+                    <div class="col-4" style="overflow-y: scroll !important;" id="chatsbox">
+                        <!-- <div class="botreplydiv">
                             <img src="https://www.pngitem.com/pimgs/m/73-732620_transparent-call-center-agent-clipart-call-center-agent.png"
                                 alt="Avatar" class="bot">
                             <li class="list-group-item" id="botreply">Cras justo odio
                             </li>
                         </div>
+                    
                         <div class="userreplydiv">
                             <li class="list-group-item" id="userreply">Cras justo odio</li>
                             <img src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
                                 alt="Avatar" class="user">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-8" style="padding: 0 !important;display:flex">
                         <input type="text" id="message" class="messageinput" placeholder="Send message">
-                        <button class="buttoncircle"><i class="fa fa-paper-plane" aria-hidden="true" style="margin: 5px;font-size: 19px;color: white;"></i></button>
+                        <button class="buttoncircle" id="submit"><i class="fa fa-paper-plane" aria-hidden="true" style="margin: 5px;font-size: 19px;color: white;"></i></button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script> -->
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/chatbot.js"></script>
 </body>
 </html>

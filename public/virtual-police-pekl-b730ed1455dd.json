@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "virtual-police-pekl",
+  "private_key_id": "b730ed1455ddeb54439acb67f06fc9b18bcd9e3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDNMx7exBYhn8Bm\nOYSPG6/CsL4ci0m91kXPZ8vDEGG3BokTuWPviPT3jU4hREO45nTv0GfIAS2/zJex\nBz7uR5NoeS/AMBUQv02tlo09kAEM5hxNNVJqgqDjCiuuXLlJ5mkJmXZ59IUCOYBk\ntv9yjc5oZ0xrgD/Wcsa+A6egp1nM6FVHp+wGW/c6jLfAJ7aNJrRBdEJ7SFKXKPSP\nfIXvu9L94O2+eu9d87f81I6JXjXum2MPGTAZXAMkpEsVKU1e6LzIJOcON8xiAhar\nPFCzYcked3i9uyQwBQS6I3shabBxSbCDLK6VfsNeIa9ylWj+Npk+xVSC23lTX+vd\nJWoAEkhvAgMBAAECggEAUuo4q5f9P1nvYv8T1sW/uAI114/a3LgD3mJZHfl1GoEs\nC4nKXWRwY8U30E5mtQR+NNb30IPVah5wHwrH/X1zjXAGgPiM0ocSirV+XeVd30nu\nHq6QnlQpUYRvERYLktZlFAlsK6xHwJXekRO21aGCSYKQCRI5+VvIfcg5SDvHF/oB\n9Hl9wA6DnvI6ydstLvUtq1w2Xcl0ZcDybovh0ENgdlbjfuksl/QwFn6YROL7WGoe\nklJngSxgErnDqEsdtOUDEfnXkDTBUv/MvsCpffGfb7roWDKCinbGGPUOMQsxhjvc\n8810SWzGLJfkYdSvgNPJE1SPkBr0bOiPJ+Mx0hVGZQKBgQDu+jF0M+J0Bh7jsMKL\nOAXiEIbpVhIvQEA0KGF6a4RQMHL80fhldnu1gA/4+1lZsCxJQodrIHz7TAuQI+mR\nLcD9jXbvu3igVA7gEWq5sjgUCsHGCHPMjXoI+FHsO3oThSELPlPFPxoZ45BbIglm\nAGJZ0FY97LSyHI5kT5OlR386/QKBgQDb0PwKmQGAyxGGPStcBkjSiK+7jArcguLu\nH509BTpGCGZ+grJd43WD48du9rndh9Y5mEe4jdGRGVWGiBArBA5WWImN83qfSL/I\nJM3LC+bonSYXmle3VH9FZ2QMLGuMudZvPhr7B4wrrUpbvxq27jHOol1Kxd0IPwfl\nlLDRNou62wKBgQDFw+EHNCTUNXh8nvvwMFWWBm1PTj5QQhCf2UcKA04E+oM+PBkf\nBlVMF4WgW4lO0p9jpR3iBonHgOAU0dNppH6QlfB2ZiNmMwn4XhF/SUBlPZ2sX7RM\n9Euofq91Gqdk3ghBgLvcgOL9x7ff4yP5+JlrkCC+sFO9Diq8Uqpx3eAplQKBgDDV\n3Sj9lTfn5ZzNOjTXsJYVh/VCx6b17TS6EVTdNHUaqKqynq39Or5yfHxKlECDTTS+\ngDCgUU7LMhURZYYpAIZuZSEEVtnMb88nXhEeM866GxxjTdmNDDl/HtsVg09geiN8\nyMG8i4eomDyJ2IWLpcUijVdvXgvW9QosXpwcYi7BAoGARomHVAn0Tx5fLm1Hi/+p\nf9n/U7skGoNsalGtzp8Ra7/ZEOdL0K4YuDtn6caBjCR/Glnkte767gO5KNRdnoSr\nextRMPVg86a/qQc3TtbxV4PRRfxhAiDApMQVJ5t6RrWVU/QQ/YkfnGsz8nU9TL2l\neNQ14V9JPDMnwHLDEFO5zLE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflowintegrate@virtual-police-pekl.iam.gserviceaccount.com",
+  "client_id": "116143024515520247729",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflowintegrate%40virtual-police-pekl.iam.gserviceaccount.com"
+}

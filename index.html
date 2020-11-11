@@ -243,6 +243,7 @@
       visibility: hidden;
       z-index: 0;
     }
+    
     .open-login .display {
       opacity: 0;
       visibility: visible;
@@ -291,11 +292,11 @@
 
       <div class="form">
         <h3>Welcome Bock, Login</h3>
-        <input type="text" name="" placeholder="username" />
-        <input type="text" name="" placeholder="role" />
-        <input type="password" name="" placeholder="password" />
+        <input type="text" name="" placeholder="username" id="username"/>
+        <input type="text" name="" placeholder="role" id="role"/>
+        <input type="password" name="" placeholder="password" id = "password"/>
         <br>
-        <button class="submit" id="loginsubmit">Link Button</button>
+        <button class="submit" id="loginsubmit">Log In</button>
         <!-- <button class="submit">Button</button> -->
         <!-- <p>
           By clicking 'submit' you agree to our
@@ -365,6 +366,7 @@
       </footer>
     </div>
   </body>
+  <script src="/js/login.js"></script>
   <script>
 
     $(document).ready(function () {
@@ -376,10 +378,11 @@
       });
     });
 
-    const button1 = document.getElementById('loginsubmit');
-button1.addEventListener('click', function (e) {
-    location.href='/mainuserpage';
-});
+//     const button1 = document.getElementById('loginsubmit');
+// button1.addEventListener('click', function (e) {
+//     location.href='/mainuserpage';
+// });
 
   </script>
+
 </html>

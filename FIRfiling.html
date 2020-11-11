@@ -67,6 +67,19 @@ form{
 #submit{
     background:rgba(113,96,255,1) !important;
 }
+
+select{
+  
+  background: rgb(243, 243, 243) !important;
+}
+input{
+  background: rgb(243, 243, 243) !important;
+}
+
+#Description{
+  height: 165px !important;
+  background: rgb(243, 243, 243);
+}
 </style>
 
 <body>
@@ -133,46 +146,30 @@ form{
                     <form>
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <label for="inputEmail4">Subject of FIR</label>
+                            <input type="email" class="form-control" id="subject" placeholder="Enter subject">
                           </div>
                           <div class="form-group col-md-6">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="inputAddress">Address</label>
-                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                        </div>
-                        <div class="form-group">
-                          <label for="inputAddress2">Address 2</label>
-                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                        </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                          </div>
-                          <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                              <option selected>Choose...</option>
-                              <option>...</option>
+                            
+                            <label for="inputPassword4">Type of FIR</label>
+                            <select class="form-control" id="type" placeholder="Choose FIR Type">
+                              <option value="Missing Person">Missing Person</option>
+                              <option value="Lost Item">Lost Item</option>
+                              <option value="Criminal Dispute">Criminal Dispute</option>
                             </select>
-                          </div>
-                          <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
+                            <!-- <input type="password" class="form-control" id="type" placeholder="Choose FIR Type"> -->
                           </div>
                         </div>
                         <div class="form-group">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                              Check me out
-                            </label>
-                          </div>
+                          <label for="inputAddress2">Image </label>
+                          <label for="inputAddress">
+                            (Only required in case of Person missing or Lost Item)</label>
+                          <input type="text" class="form-control" id="imageurl" placeholder="google drive shareable url of imagr">
+                        </div>
+                        <div class="form-group">
+                          <label class="form-check-label" for="gridCheck">Description of FIR
+                          </label>
+                          <textarea type="text" class="form-control" placeholder="Enter Description" id="Description"></textarea>
                         </div>
                         <button type="submit" id="submit" class="btn btn-primary">Sign in</button>
                       </form>
