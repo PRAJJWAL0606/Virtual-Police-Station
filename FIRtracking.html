@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,6 +55,14 @@
     height: 400px;
     background: white;
     border-radius: 0px 0px 20px 20px;
+}
+
+.imgitem{
+  height: 200px !important;
+  width: 250px !important;
+}
+.text-muted{
+  width:85px !important;
 }
 </style>
 
@@ -124,28 +133,31 @@
                   </div>
                 <div class="row">
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Filed">
+                        <!-- <div class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">29-02-2020</small>
+                          </div>
+                          
+                          <img class="imgitem" src="https://images.squarespace-cdn.com/content/v1/548ec3bee4b068057bfb6db7/1555524366324-VWFSC5FC2C2D9IP7XCP7/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/image-asset.jpeg?format=1500w">
+                          <p class="mb-1">Description : Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                          <p class="mb-1">Message :  Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+                          </p>
+                        </div>
+                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                          <div class="d-flex w-100 justify-content-between" >
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
                           </div>
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                           <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                          <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                          </div>
-                          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                          <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
-                      </div>
+                        </div>-->
+                    </div>
                   </div>
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Tracking">
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
@@ -153,27 +165,33 @@
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                           <small class="text-muted">Donec id elit non mi porta.</small>
                         </a>
-                        
-                      </div>
+                         -->
+                    </div>
                   </div>
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Completed">
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
                           </div>
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                          <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
+                          <small class="text-muted">Status : 
+                            <div class="badge badge-primary text-wrap" style="width: 10rem;">
+                            This text should wrap.
+                          </div>
+                        </small>
+                        </a> -->
+                    </div>
                   </div>
                 </div>
               </div>
         </div>
-
-        <script src="js/jquery.min.js"></script>
+<!-- 
+        <script src="js/jquery.min.js"></script> -->
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="/js/TrackFIRuser.js"></script>
 </body>
 </html>

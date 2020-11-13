@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -57,7 +58,7 @@
     background: white;
     border-radius: 0px 0px 20px 20px;
 }
-form{
+.form{
     margin:30px;
 }
 
@@ -143,7 +144,7 @@ input{
                 </div>
                 <div class="row">
                   <div class="col">
-                    <form>
+                    <div class="form">
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="inputEmail4">Subject of FIR</label>
@@ -152,7 +153,7 @@ input{
                           <div class="form-group col-md-6">
                             
                             <label for="inputPassword4">Type of FIR</label>
-                            <select class="form-control" id="type" placeholder="Choose FIR Type">
+                            <select class="form-control" id="Firtype" placeholder="Choose FIR Type">
                               <option value="Missing Person">Missing Person</option>
                               <option value="Lost Item">Lost Item</option>
                               <option value="Criminal Dispute">Criminal Dispute</option>
@@ -171,17 +172,18 @@ input{
                           </label>
                           <textarea type="text" class="form-control" placeholder="Enter Description" id="Description"></textarea>
                         </div>
-                        <button type="submit" id="submit" class="btn btn-primary">Sign in</button>
-                      </form>
+                        <button type="submit" id="submit" class="btn btn-primary">File</button>
+                    </div>
                   </div>
                   
                 </div>
             </div>
         </div>
-
-        <script src="js/jquery.min.js"></script>
+<!-- 
+        <script src="js/jquery.min.js"></script> -->
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/FIRFile.js"></script>
 </body>
 </html>

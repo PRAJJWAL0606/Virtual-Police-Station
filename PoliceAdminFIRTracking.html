@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -127,10 +128,14 @@ h3{
     width: 120px;
 }
 
-.missingimage{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+.imgitem{
+  height: 200px !important;
+  width: 250px !important;
+}
+.imgdetail{
+  border-radius: 50%;
+  height: 200px !important;
+  width: 250px !important;
 }
 </style>
 
@@ -175,10 +180,10 @@ h3{
             <div class="container">
                 <div class="row">
                     <div class="col-4">
-                      Tracking
+                      Filed
                     </div>
                     <div class="col-4">
-                      Filed
+                      Tracking
                     </div>
                     <div class="col-4">
                       Completed
@@ -186,8 +191,8 @@ h3{
                   </div>
                 <div class="row">
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Filed">
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
@@ -202,12 +207,12 @@ h3{
                           </div>
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                           <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
+                        </a> -->
                       </div>
                   </div>
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Tracking">
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
@@ -215,19 +220,19 @@ h3{
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                           <small class="text-muted">Donec id elit non mi porta.</small>
                         </a>
-                        
+                         -->
                       </div>
                   </div>
                   <div class="col">
-                    <div class="list-group" style="margin:10px">
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="list-group" style="margin:10px" id="Completed">
+                        <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                           <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">List group item heading</h5>
                             <small class="text-muted">3 days ago</small>
                           </div>
                           <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                           <small class="text-muted">Donec id elit non mi porta.</small>
-                        </a>
+                        </a> -->
                   </div>
                 </div>
             </div>
@@ -237,34 +242,31 @@ h3{
                   <div class="col-sm-8">
                     <h4 style="text-align: center;">FIR Details</h4>
                     <div class="row">
-                        <div class="col-6">
-                            <div class="d-flex w-100 justify-content-between">
+                        <div class="col-6" id="detailfir" style="color:white !important;overflow-y: scroll;">
+                            <!-- <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1" style="color:white">List group item heading</h5>
-                                <small><img class= "missingimage" src="https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-2-1.jpeg" alt="Avatar"></small>
-                              </div>
-                              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. <br>
+                                <img class= "missingimage" src="https://qodebrisbane.com/wp-content/uploads/2019/07/This-is-not-a-person-2-1.jpeg" alt="Avatar">
+                            </div>
+                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. <br>
                                 Maecenas sed diam eget risus varius blandit.</p>
-                              <small>Donec id elit non mi porta.</small>
+                            <small>Donec id elit non mi porta.</small> -->
                         </div>
                         <div class = "col-7">
                             <div class="col-3">
                                 <h3>Send Message</h3>
-                                <form class="form-inline">
-                                    <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
-                                  
-                                  
-                                    <button type="submit" class="btn btn-primary mb-2" id="sendmsg">Submit</button>
-                                  </form>
-
+                                <div class="form-inline">
+                                    <label class="sr-only" for="inlineFormInputName2">Message</label>
+                                    <input type="text" class="form-control mb-2 mr-sm-2" id="msgadmin" placeholder="Enter message">
+                                    <button type="submit" class="btn btn-primary mb-2" id="sendmsg">Send</button>
+                                </div>
                             </div>
                             <div class="col-3">
                                 <h3>Update Status</h3>
-                                <form class="form-inline">
-                                    <button type="submit" class="btn btn-primary mb-2 buttonnew">Filed</button>
-                                    <button type="submit" class="btn btn-primary mb-2 buttonnew">Tracking</button>
-                                    <button type="submit" class="btn btn-primary mb-2 buttonnew">Completed</button>
-                                  </form>
+                                <div class="form-inline">
+                                    <button class="btn btn-primary mb-2 buttonnew" id="filedbtn">Filed</button>
+                                    <button class="btn btn-primary mb-2 buttonnew" id="trackedbtn">Tracking</button>
+                                    <button class="btn btn-primary mb-2 buttonnew" id="completedbtn">Completed</button>
+                                </div>
 
                             </div>
                         </div>
@@ -275,10 +277,11 @@ h3{
                 
             </div>
         </div>
-
-        <script src="js/jquery.min.js"></script>
+<!--         
+        <script src="js/jquery.min.js"></script> -->
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="/js/TrackFIRadmin.js"></script>
 </body>
 </html>

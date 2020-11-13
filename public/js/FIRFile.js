@@ -1,13 +1,14 @@
-const button = document.getElementById('loginsubmit');
-var e = document.getElementById("elementId");
-var type = e.options[e.selectedIndex].value;
+const button = document.getElementById('submit');
 
 button.addEventListener('click', function(e) {
+    var sel = document.getElementById("Firtype");
+    var Firtype = sel.options[sel.selectedIndex].value;
+
   console.log('button was clicked');
     let fir = {
-        subject: document.getElementById('username').value,    
-        image: document.getElementById('password').value,
-        type: type,
+        subject: document.getElementById('subject').value,    
+        image: document.getElementById('imageurl').value,
+        type: Firtype,
         description:document.getElementById('Description').value
     };
 
@@ -17,7 +18,7 @@ button.addEventListener('click', function(e) {
         dataType: "json",
         success: function (msg) {
             if (msg.length > 0) {
-                href.location = "/firtracking";
+                location.href = "/firtracking";
             }
             else {
                 alert("Invalid User !");

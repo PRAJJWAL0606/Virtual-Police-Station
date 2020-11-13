@@ -1,14 +1,10 @@
 console.log("Server-side code running");
-
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const mongodb = require("mongodb");
 const app = express();
 const dialogflow = require('dialogflow');
-// const { uuid } = require('uuidv4');
 const uuid = require('uuid');
-// const newUuid = uuid.v1();
-// uuid = newUuid;
 
 const PORT = process.env.port || 8080;
 app.use(express.static("public"));
@@ -161,9 +157,9 @@ app.post("/filefir", (req, res) => {
     userid:userid,
     subject:newfir.subject,
     type:newfir.type,
-    image:newfir.type,
+    image:newfir.image,
     description:newfir.description,
-    message:message,
+    message:"No message yet",
     status:"Filed"
   }
 
@@ -181,3 +177,120 @@ app.post("/filefir", (req, res) => {
   });
 
 });
+
+
+app.get('/getfiledfiruser',(req,res) =>{
+  db.collection("FIR").find({ userid: userid, policeStationid:policestationid}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+
+app.get('/getfiledfiradmin',(req,res) =>{
+  db.collection("FIR").find({policeStationid:policestationid}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+app.get('/getdetailfir',(req,res) =>{
+  var firid = req.query.idnumber;
+  db.collection("FIR").find({ _id: new mongodb.ObjectId(firid) }).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+
+
+app.post("/sendmsgadmin", (req, res) => {
+  var message = req.body.message;
+  var firid = req.body.idnumber;
+  db.collection("FIR").find({_id: new mongodb.ObjectId(firid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['message'] = message;
+        db.collection("FIR").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+app.post("/updatefirstatus", (req, res) => {
+  var newstatus = req.body.status;
+  var firid = req.body.idnumber;
+  db.collection("FIR").find({_id: new mongodb.ObjectId(firid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['status'] = newstatus;
+        db.collection("FIR").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+app.get('/getmissingperson',(req,res) =>{
+  db.collection("FIR").find({policeStationid:policestationid,type:"Missing Person",  $or: [{ 'status': "Filed" }, { 'status': "Tracking"}] }).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+app.get('/getlostitems',(req,res) =>{
+  db.collection("FIR").find({policeStationid:policestationid,type:"Lost Item",  $or: [{ 'status': "Filed" }, { 'status': "Tracking"}] }).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+// app.get('/getlostitems',(req,res) =>{
+//   db.collection("FIR").find({policeStationid:policestationid,type:"Lost Item",type:"filed"or type:"tracking"}).toArray((err, result) => {
+//       if (err) {
+//         res.send(err);
+//       } else {
+//         res.send(result);
+//       }
+//     });
+// });
+
