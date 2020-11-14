@@ -82,8 +82,7 @@ $(document).ready(function (){
                     div2sub.appendChild(heading);
                     div2sub.appendChild(p1);
                     div2sub.appendChild(p2);
-                    div2.appendChild(div2sub);
-
+                    
                     //table 
                     var table = document.createElement('table');
                     table.style.overflowY = "scroll";
@@ -192,7 +191,8 @@ $(document).ready(function (){
 
                     table.appendChild(tablebody);
 
-                    div2.appendChild(table);
+                    div2sub.appendChild(table);
+                    div2.appendChild(div2sub);
                     subdiv.appendChild(div2);
                     maindiv.appendChild(subdiv);
                     maincol.appendChild(maindiv);
