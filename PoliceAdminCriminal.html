@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -78,7 +79,7 @@
         background: #eee;
     }
 
-    form {
+    .form {
         padding: 20px
     }
 
@@ -155,8 +156,8 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="heading" style="width: 47.4% !important;">Track and Update Wanted Criminal Details</div>
-                        <ul class="list-group">
-                            <div class="card mb-3" style="max-width: 540px;">
+                        <ul class="list-group" id="criminallist">
+                            <!-- <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="https://cms.qz.com/wp-content/uploads/2018/12/earring2.png?w=450&h=463&crop=1&strip=all&quality=75"
@@ -165,14 +166,12 @@
                                     <div class="col-md-8">
                                         <div class="card-body">
                                             <h5 class="card-title">Name of the Person</h5>
-                                            <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                             <table class="table" style="overflow-y: scroll; height:100px!important">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Feild</th>
+                                                        <th scope="col">Description</th>
+                                                        <th scope="col">Edit</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -344,7 +343,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </ul>
 
@@ -352,80 +351,37 @@
                     <div class="col-4">
                         <div class="heading">Add Wanted Criminal</div>
                         <div style="margin-top:60px">
-                            <form>
+                            <div class="form">
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <label for="exampleFormControlInput1">Name</label>
+                                    <input type="email" class="form-control" id="name"
                                         placeholder="name@example.com">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <label for="exampleFormControlInput1">Reward</label>
+                                    <input type="email" class="form-control" id="reward"
                                         placeholder="name@example.com">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    <label for="exampleFormControlInput1">Contact Number in case seen</label>
+                                    <input type="email" class="form-control" id="contactno"
                                         placeholder="name@example.com">
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                    <label for="exampleFormControlInput1">Image Url (google drive shareable link)</label>
+                                    <input type="email" class="form-control" id="image"
+                                        placeholder="name@example.com">
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                                <div class="row">
-                                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="gridRadios1">
-                                                First radio
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios2" value="option2">
-                                            <label class="form-check-label" for="gridRadios2">
-                                                Second radio
-                                            </label>
-                                        </div>
-                                        <div class="form-check disabled">
-                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                id="gridRadios3" value="option3" disabled>
-                                            <label class="form-check-label" for="gridRadios3">
-                                                Third disabled radio
-                                            </label>
-                                        </div>
-                                    </div>
 
-                                </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1">Example file input</label>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    <label for="exampleFormControlTextarea1">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" placeholder="Enter Description of criminal"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                               
+                                <button id="submit" class="btn btn-primary">Submit</button>
 
-                            </form>
+                            </div>
 
                         </div>
                     </div>
@@ -433,7 +389,7 @@
             </div>
         </div>
 
-        <script src="js/jquery.min.js"></script>
+        <script src="js/criminalTracking.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

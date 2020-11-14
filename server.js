@@ -284,13 +284,91 @@ app.get('/getlostitems',(req,res) =>{
 });
 
 
-// app.get('/getlostitems',(req,res) =>{
-//   db.collection("FIR").find({policeStationid:policestationid,type:"Lost Item",type:"filed"or type:"tracking"}).toArray((err, result) => {
-//       if (err) {
-//         res.send(err);
-//       } else {
-//         res.send(result);
-//       }
-//     });
-// });
+app.post("/addcriminal", (req, res) => {
+  var criminal = req.body;
+  var criminaldetail = {
+    'policestationid':policestationid,
+    'name': criminal.name,    
+    'image': criminal.image,
+    'type': criminal.type,
+    'reward':criminal.reward,
+    'description':criminal.description,
+    'contactno':criminal.contactno,
+    'suspensionDate':criminal.suspensionDate,
+    'salary':criminal.salary,
+    'behaviour':criminal.behaviour
+  }
+  db.collection("criminalRecords").save(criminaldetail, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("click added to db");
+    res.send([
+      {
+        message: "Request successfully logged",
+        status: true,
+      },
+    ]);
+  });
+});
 
+
+
+app.post("/updatecriminaltype", (req, res) => {
+  var newtype = req.body.type;
+  var criminalid = req.body.idnumber;
+  db.collection("criminalRecords").find({_id: new mongodb.ObjectId(criminalid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['type'] = newtype;
+        db.collection("criminalRecords").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+app.post("/updatecriminalcontact", (req, res) => {
+  var newcontact = req.body.contactno;
+  var criminalid = req.body.idnumber;
+  db.collection("criminalRecords").find({_id: new mongodb.ObjectId(criminalid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['contactno'] = newcontact;
+        db.collection("criminalRecords").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+
+app.get('/getcriminallist',(req,res) =>{
+  db.collection("criminalRecords").find({policeStationid:policestationid,type:"Criminal"}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
