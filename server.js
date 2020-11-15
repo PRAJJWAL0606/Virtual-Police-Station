@@ -283,7 +283,7 @@ app.get('/getlostitems',(req,res) =>{
     });
 });
 
-
+//criminal
 app.post("/addcriminal", (req, res) => {
   var criminal = req.body;
   var criminaldetail = {
@@ -365,6 +365,122 @@ app.post("/updatecriminalcontact", (req, res) => {
 
 app.get('/getcriminallist',(req,res) =>{
   db.collection("criminalRecords").find({policeStationid:policestationid,type:"Criminal"}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+
+//inmate
+
+app.post("/addinmate", (req, res) => {
+  var criminal = req.body;
+  var criminaldetail = {
+    'policestationid':policestationid,
+    'name': criminal.name,    
+    'image': criminal.image,
+    'type': criminal.type,
+    'reward':criminal.reward,
+    'description':criminal.description,
+    'contactno':criminal.contactno,
+    'suspensionDate':criminal.suspensionDate,
+    'salary':criminal.salary,
+    'behaviour':criminal.behaviour
+  }
+  db.collection("criminalRecords").save(criminaldetail, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("click added to db");
+    res.send([
+      {
+        message: "Request successfully logged",
+        status: true,
+      },
+    ]);
+  });
+});
+
+
+
+app.post("/updateinmatetype", (req, res) => {
+  var newtype = req.body.type;
+  var criminalid = req.body.idnumber;
+  db.collection("criminalRecords").find({_id: new mongodb.ObjectId(criminalid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['type'] = newtype;
+        db.collection("criminalRecords").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+app.post("/updateinmatewage", (req, res) => {
+  var newwage = req.body.salary;
+  var criminalid = req.body.idnumber;
+  db.collection("criminalRecords").find({_id: new mongodb.ObjectId(criminalid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['salary'] = newwage;
+        db.collection("criminalRecords").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+app.post("/updateinmatebehaviour", (req, res) => {
+  var newbh = req.body.behaviour;
+  var criminalid = req.body.idnumber;
+  db.collection("criminalRecords").find({_id: new mongodb.ObjectId(criminalid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0]['behaviour'] = newbh;
+        db.collection("criminalRecords").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
+});
+
+
+
+
+app.get('/getinmatelist',(req,res) =>{
+  db.collection("criminalRecords").find({policeStationid:policestationid,type:"Inmate"}).toArray((err, result) => {
       if (err) {
         res.send(err);
       } else {
