@@ -312,7 +312,7 @@ function updateinmatebehaviour(idnumber) {
         success: function (msg) {
             if (msg.length > 0) {
                 location.href="/admininmatetracking";
-            } 
+            }
             else {
                 alert("Something went wrong try again!!");
             }

@@ -67,55 +67,54 @@
 </style>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
-                class="d-inline-block align-top" alt="">
-            Bootstrap
-        </a>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://thumbs.dreamstime.com/b/solid-purple-gradient-user-icon-web-mobile-design-interface-ui-ux-developer-app-137467998.jpg" width="30" height="30"
+            class="d-inline-block align-top" alt="">
+        Hello User !!
+    </a>
+</nav>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <div class="p-4 pt-5">
+            <h1><a href="/policestationmain" class="logo">Police Station Sec-31, Faridabad</a></h1>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="/policestationmain/">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">FIR</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="/filefir">File FIR</a>
+                        </li>
+                        <li>
+                            <a href="/firtracking">Track FIR</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/chatbot">Help</a>
+                </li>
+                <li>
+                    <a href="/missingperson">Missing People</a>
+                </li>
+                <li>
+                    <a href="/wantedcriminals">Wanted Criminals</a>
+                </li>
+                <li>
+                    <a href="/lostandfound">Lost and Found</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                    <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">Palla Police Station</a></h1>
-                <ul class="list-unstyled components mb-5">
-                    <li>
-                        <a href="/policestationmain">Home</a>
-                    </li>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">FIR</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="/filefir">File FIR</a>
-                            </li>
-                            <li>
-                                <a href="/firtracking">Track FIR</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/chatbot">Help</a>
-                    </li>
-                    <li>
-                        <a href="/missingperson">Missing People</a>
-                    </li>
-                    <li>
-                        <a href="/wantedcriminals">Wanted Criminals</a>
-                    </li>
-                    <li>
-                        <a href="/lostandfound">Lost and Found</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <h1 style="text-align:center;">YOUR FIR TRACKING</h1>

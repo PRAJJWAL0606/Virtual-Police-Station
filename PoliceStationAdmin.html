@@ -5,7 +5,7 @@
     <title>Virtual Police</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -149,11 +149,11 @@
                     <span class="sr-only">Toggle Menu</span>
                 </button>
             </div>
-            <div class="p-4 pt-5">
-                <h1><a href="/policestationmain" class="logo">Palla Police Station</a></h1>
+            <div class="p-4 pt-5" >
+                <h1><a href="/policestationmain" class="logo">Police Station Sec-31, Faridabad</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
-                        <a href="/policestationmain">Home</a>
+                        <a href="/policestationadmin">Home</a>
                     </li>
                     <li>
                         <a href="/adminfirtracking">Track FIR and Update</a>
@@ -262,8 +262,8 @@
                     </div>
                     <div class="col-sm-4" style="overflow-y: scroll;">
                         <h1 style="text-align: center;font-size:40px">Alerts</h1>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action">
+                        <div class="list-group" id="alerts">
+                            <!-- <a href="#" class="list-group-item list-group-item-action">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">Name : Ashish</h5>
                                     <small>12:00</small>
@@ -289,7 +289,7 @@
                                 <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                                     risus varius blandit.</p>
                                 <small class="text-muted">Donec id elit non mi porta.</small>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                 </div>
@@ -402,7 +402,7 @@
             </div>
         </div>
 
-        <script src="js/jquery.min.js"></script>
+        <script src="js/policeStationadmin.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

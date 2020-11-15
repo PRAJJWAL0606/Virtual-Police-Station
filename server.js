@@ -43,7 +43,15 @@ app.get("/chatbot", (req, res) => {
 });
 
 
+var userid=null;
+var policestationid=null;
+
 app.get("/policestationmain", (req, res) => {
+  res.sendFile(__dirname + "/policestationmain.html");
+});
+
+app.get("/policestationmain/:id", (req, res) => {
+  policestationid = req.params.id;
   res.sendFile(__dirname + "/policestationmain.html");
 });
 
@@ -92,9 +100,6 @@ app.get("/admincriminaltracking", (req, res) => {
 });
 
 
-var userid=null;
-var policestationid=null;
-
 app.post("/login", (req, res) => {
   var username = req.body.username;
   var password = req.body.password;
@@ -105,7 +110,8 @@ app.post("/login", (req, res) => {
       res.send(err);
     } 
     else{
-      userid = result[0]._id;
+      policestationid = result[0].policeStation;
+      userid = result[0]._id.toString();
       res.send(result);
     }
   });
@@ -487,4 +493,81 @@ app.get('/getinmatelist',(req,res) =>{
         res.send(result);
       }
     });
+});
+
+
+
+app.get('/getpolicestation',(req,res) =>{
+
+  db.collection("PoliceStation").find({}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+
+});
+
+
+app.get('/getuserDetails',(req,res) =>{
+  db.collection("userDetails").find({ _id: new mongodb.ObjectId(userid) }).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+});
+
+app.post('/alertPoliceStation',(req,res) =>{
+  var alert = req.body;
+
+  db.collection("Alerts").save(alert, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("click added to db");
+    res.send([
+      {
+        message: "Request successfully logged",
+        status: true,
+      },
+    ]);
+  });
+});
+
+
+app.get('/getalerts',(req,res) =>{
+
+  db.collection("Alerts").find({policeStationid:policestationid}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+
+});
+
+
+
+app.post("/confirmalert", (req, res) => {
+  var deletedata = req.body;
+
+  db.collection("Alerts").remove(
+    { _id: new mongodb.ObjectId(deletedata.idnumber) },
+    (err, result) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("click added to db");
+      res.send([
+        {
+          message: "Request successfully logged",
+          status: true,
+        },
+      ]);
+    }
+  );
 });
