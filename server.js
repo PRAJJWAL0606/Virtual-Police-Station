@@ -571,3 +571,17 @@ app.post("/confirmalert", (req, res) => {
     }
   );
 });
+
+
+
+app.get('/getpolicestationdetails',(req,res) =>{
+
+  db.collection("PoliceStation").find({ _id: new mongodb.ObjectId(policestationid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    });
+
+});

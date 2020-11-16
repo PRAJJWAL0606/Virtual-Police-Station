@@ -5,7 +5,7 @@
     <title>Virtual Police</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -129,6 +129,12 @@
     border: 0;
 }
 
+.imagetopofficers{
+    margin:10px !important;
+    border-radius:50% !important;
+    height: 80px !important;
+    width: 80px !important;
+}
 </style>
 
 <body>
@@ -148,7 +154,7 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="/policestationadmin" class="logo">Police Station Sec-31, Faridabad</a></h1>
+                <h1><a href="/policestationadmin" class="logo" id="policeStationname">Police Station Sec-31, Faridabad</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="/policestationmain/">Home</a>
@@ -186,8 +192,8 @@
             <div class="container">
                 <div class="row">
                   
-                  <div class="col-sm-4" style="overflow:hidden">
-                    <div class="card member-box">
+                  <div class="col-sm-4" style="overflow:hidden" id="SHOinfo">
+                    <!-- <div class="card member-box">
                         <span class="shape"></span>
                         <img class="card-img-top" src="https://pbs.twimg.com/media/EYsl31yUYAAVJAC.jpg" alt="">
                         <div class="card-body">
@@ -195,8 +201,8 @@
                           <h4 class="member-title">Hashim Ahmed</h4>
                           <small><strong>Email: </strong>secretary@basis.org.bd</small> <br>
                           <small><strong>Phone: </strong> 09612322747 (Ext: 103)</small>
-                        </div>
-                        <div class="card-footer">
+                        </div> -->
+                        <!-- <div class="card-footer">
                           <div class="social">
                             <big>Follow:</big> 
                             <a href="#">
@@ -206,8 +212,8 @@
                               <i class="fab fa-instagram"></i>
                             </a>
                           </div>
-                        </div>
-                      </div>
+                        </div> -->
+                      <!-- </div> -->
                   </div>
                   <div class="col-sm-7">
                       <h1 style="text-align: center;font-size:40px">Total Cases Solved</h1>
@@ -219,7 +225,7 @@
               </div>
               <div class="container">
                 <div class="row">
-                  <div class="col">
+                  <div class="col" id="casespending">
                       <div style="display:flex">
                       <div style="float: left;
                       text-align: center;
@@ -234,23 +240,33 @@
                       </div>
                   </div>
                   <div class="col" style="overflow-y:scroll;overflow-x: hidden;">
-                    <h4 style="text-align:center">Bulletins</h4>
+                    <h4 style="text-align:center">Citizen Rights</h4>
                     <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                        <li class="list-group-item">Any citizen who has knowledge of preparation or commission of any crime
+                            or who has any complaint to make with reference to the duties of the Police as
+                            enumerated above can approach the Police Station and give such information
+                            available with him or her</li>
+                        <li class="list-group-item">According to the Code of Criminal Procedure, any officer and above of the
+                            rank of Head constable can function as the Station House Officer in-charge of
+                            the Police Station in the absence of Police Sub-Inspector, the senior most Asst
+                            Sub-Inspector present at the Police Station or the senior most Head constable
+                            present functions as the Station House Officer.</li>
+                        <li class="list-group-item">Any private person may arrest or cause to be arrested any person who in
+                            his presence commits a non-bail able and cognizable offence, or any
+                            proclaimed offender, and, without unnecessary delay, shall make over or
+                            cause to be made over any person so arrested to a police officer, or, in the
+                            absence of a police officer take such person or cause him to be taken in
+                            custody to the nearest police station.</li>
                       </ul>
                   </div>
                   <div class="col">
                     <h4 style="text-align:center">
                         Top Officers
                     </h4>
-                    <div style="display: flex;">
-                        <img src="https://3.imimg.com/data3/WH/CO/MY-10057065/polics-uniform-500x500.jpg" alt="Avatar" height="80px" width="80px"style="margin:10px;border-radius:50%">
-                        <img src="https://cdn.gaystarnews.com/uploads/2017/10/prithika-yashini-police-tamil-nadu-india.jpg" alt="Avatar" height="80px" width="80px" style="margin:10px;border-radius:50%"> 
-                        <img src="https://akm-img-a-in.tosshub.com/sites/dailyo/fb_feed_images/story_image/201612/police-insta_123116010406.jpg" alt="Avatar" height="80px" width="80px" style="margin:10px;border-radius:50%">
+                    <div style="display: flex;" id="topofficers">
+                        <!-- <img src="https://3.imimg.com/data3/WH/CO/MY-10057065/polics-uniform-500x500.jpg" alt="Avatar" class = "imagetopofficers">
+                        <img src="https://cdn.gaystarnews.com/uploads/2017/10/prithika-yashini-police-tamil-nadu-india.jpg" alt="Avatar" class = "imagetopofficers"> 
+                        <img src="https://akm-img-a-in.tosshub.com/sites/dailyo/fb_feed_images/story_image/201612/police-insta_123116010406.jpg" alt="Avatar" class = "imagetopofficers"> -->
 
                     </div>
                   </div>
@@ -258,7 +274,7 @@
               </div>
         </div>
 
-        <script src="/js/jquery.min.js"></script>
+        <script src="/js/policeStationmain.js"></script>
         <script src="/js/popper.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/main.js"></script>
@@ -346,73 +362,11 @@ var options = {
     }
 };
 
-// Chart.pluginService.register({
-//     beforeRender: function(chart) {
-//         if (chart.config.options.showAllTooltips) {
-//             // create an array of tooltips
-//             // we can't use the chart tooltip because there is only one tooltip per chart
-//             chart.pluginTooltips = [];
-//             chart.config.data.datasets.forEach(function(dataset, i) {
-//                 chart.getDatasetMeta(i).data.forEach(function(sector, j) {
-//                     chart.pluginTooltips.push(new Chart.Tooltip({
-//                         _chart: chart.chart,
-//                         _chartInstance: chart,
-//                         _data: chart.data,
-//                         _options: chart.options.tooltips,
-//                         _active: [sector]
-//                     }, chart));
-//                 });
-//             });
-
-//             // turn off normal tooltips
-//             chart.options.tooltips.enabled = false;
-//         }
-//     },
-//     afterDraw: function(chart, easing) {
-//         if (chart.config.options.showAllTooltips) {
-//             // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
-//             if (!chart.allTooltipsOnce) {
-//                 if (easing !== 1)
-//                     return;
-//                 chart.allTooltipsOnce = true;
-//             }
-
-//             // turn on tooltips
-//             chart.options.tooltips.enabled = true;
-//             Chart.helpers.each(chart.pluginTooltips, function(tooltip, i) {
-//                 if (i !== 3) return;
-//                 tooltip.initialize();
-//                 tooltip.update();
-//                 // we don't actually need this since we are not animating tooltips
-//                 tooltip.pivot();
-//                 tooltip.transition(easing).draw();
-//             });
-//             chart.options.tooltips.enabled = false;
-//         }
-//     }
-// });
 var myLineChart = new Chart(ctx, {
     type: 'line',
     data: data,
     options: options
 });
 
-var pie = document.getElementById('pie');
-var pieConfig = new Chart(pie, {
-    type: 'pie',
-    data: {
-        labels: ['data-1', 'data-2'],
-        datasets: [{
-            label: '# of data',
-            data: [40, 80],
-            backgroundColor: ['rgb(242, 230, 255)', 'rgba(113,96,255,1)'],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        responsive: true, // Instruct chart js to respond nicely.
-        maintainAspectRatio: true, // Add to prevent default behaviour of full-width/height 
-    }
-});
 </script>
 </html>

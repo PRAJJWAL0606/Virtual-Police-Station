@@ -40,7 +40,7 @@
             -webkit-box-flex: 0;
             -ms-flex: 0 0 58.33333%;
             flex: 0 0 58.33333%;
-            max-width: 58.33333%;
+            max-width: 48.33333%;
             height: 350px;
             background: white;
             margin: 10px;
@@ -52,8 +52,8 @@
 
     @media (min-width: 576px) {
         .col-sm-4 {
-            flex: 0 0 37.33333%;
-            max-width: 37.33333%;
+            flex: 0 0 47.9%;
+            max-width: 48.33333%;
             height: 350px;
             background: white;
             margin: 10px;
@@ -131,6 +131,13 @@
         background-color: transparent;
         border: 0;
     }
+
+    .imagetopofficers {
+        margin: 10px !important;
+        border-radius: 50% !important;
+        height: 80px !important;
+        width: 80px !important;
+    }
 </style>
 
 <body>
@@ -138,7 +145,7 @@
         <a class="navbar-brand" href="#">
             <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
                 class="d-inline-block align-top" alt="">
-            Bootstrap
+            Hello Admin !!
         </a>
     </nav>
     <div class="wrapper d-flex align-items-stretch">
@@ -149,8 +156,8 @@
                     <span class="sr-only">Toggle Menu</span>
                 </button>
             </div>
-            <div class="p-4 pt-5" >
-                <h1><a href="/policestationmain" class="logo">Police Station Sec-31, Faridabad</a></h1>
+            <div class="p-4 pt-5">
+                <h1><a href="/policestationmain" class="logo" id="policeStationname"></a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="/policestationadmin">Home</a>
@@ -173,8 +180,8 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-sm-7" style="overflow:hidden">
-                        <div class="card member-box">
+                    <div class="col-sm-7" style="overflow:hidden" id="SHOinfo">
+                        <!-- <div class="card member-box">
                             <span class="shape"></span>
                             <img class="card-img-top" src="https://pbs.twimg.com/media/EYsl31yUYAAVJAC.jpg" alt="">
                             <div class="card-body">
@@ -258,7 +265,7 @@
                                         </div>
                                     </div></small>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-sm-4" style="overflow-y: scroll;">
                         <h1 style="text-align: center;font-size:40px">Alerts</h1>
@@ -313,101 +320,46 @@
                         </div>
                     </div>
                     <div class="col" style="overflow-y:scroll;overflow-x: hidden;">
-                        <h4 style="text-align:center">Bulletins</h4>
-                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                            Add:
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Input group example"
-                                    aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                               height: 25px !important;
-                                background-color: rgba(247, 245, 245, 0.933);
-                            ">
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary" style="height: 25px;
-                                line-height: 5px; background-color: rgb(113,96,255);"> <i class="fa fa-pencil" 
-                                        style="color:white; line-height: 10px;" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
+                        <h4 style="text-align:center">Citizen rights</h4>
+                        
                         <ul class="list-group">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Morbi leo risus</li>
-                            <li class="list-group-item">Porta ac consectetur ac</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
+                            <li class="list-group-item">Any citizen who has knowledge of preparation or commission of
+                                any crime
+                                or who has any complaint to make with reference to the duties of the Police as
+                                enumerated above can approach the Police Station and give such information
+                                available with him or her</li>
+                            <li class="list-group-item">According to the Code of Criminal Procedure, any officer and
+                                above of the
+                                rank of Head constable can function as the Station House Officer in-charge of
+                                the Police Station in the absence of Police Sub-Inspector, the senior most Asst
+                                Sub-Inspector present at the Police Station or the senior most Head constable
+                                present functions as the Station House Officer.</li>
+                            <li class="list-group-item">Any private person may arrest or cause to be arrested any person
+                                who in
+                                his presence commits a non-bail able and cognizable offence, or any
+                                proclaimed offender, and, without unnecessary delay, shall make over or
+                                cause to be made over any person so arrested to a police officer, or, in the
+                                absence of a police officer take such person or cause him to be taken in
+                                custody to the nearest police station.</li>
                         </ul>
                     </div>
                     <div class="col" style="overflow: scroll;">
                         <h4 style="text-align:center">
                             Top Officers
                         </h4>
-                        <div style="display: flex;">
-                            <img src="https://cdn.gaystarnews.com/uploads/2017/10/prithika-yashini-police-tamil-nadu-india.jpg"
-                                alt="Avatar" height="80px" width="80px" style="margin:10px;border-radius:50%">
-                            <img src="https://cdn.gaystarnews.com/uploads/2017/10/prithika-yashini-police-tamil-nadu-india.jpg"
-                                alt="Avatar" height="80px" width="80px" style="margin:10px;border-radius:50%">
-                            <img src="https://cdn.gaystarnews.com/uploads/2017/10/prithika-yashini-police-tamil-nadu-india.jpg"
-                                alt="Avatar" height="80px" width="80px" style="margin:10px;border-radius:50%">
-                        </div>
-                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                            Officer1:
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Input group example"
-                                    aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                               height: 25px !important;
-                               width: 176px;
-                                background-color: rgba(247, 245, 245, 0.933);
-                            ">
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary" style="height: 25px;
-                                line-height: 5px; background-color: rgb(113,96,255);"> <i class="fa fa-pencil" 
-                                        style="color:white; line-height: 10px;" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                            Officer2:
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Input group example"
-                                    aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                               height: 25px !important;
-                               width: 172px;
-                                background-color: rgba(247, 245, 245, 0.933);
-                            ">
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary" style="height: 25px;
-                                line-height: 5px; background-color: rgb(113,96,255);"> <i class="fa fa-pencil" 
-                                        style="color:white; line-height: 10px;" aria-hidden="true"></i></button>
-                            </div>
-                        </div>
-                        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                            Officer3:
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Input group example"
-                                    aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                               height: 25px !important;
-                               width: 172px;
-                                background-color: rgba(247, 245, 245, 0.933);
-                            ">
-                            </div>
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary" style="height: 25px;
-                                line-height: 5px; background-color: rgb(113,96,255);"> <i class="fa fa-pencil" 
-                                        style="color:white; line-height: 10px;" aria-hidden="true"></i></button>
-                            </div>
+                        <div style="display: flex;" id="topofficers">
+                           
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script src="js/policeStationadmin.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+            <script src="js/policeStationadmin.js"></script>
+            <script src="js/popper.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
 </body>
-<script>
+<!-- <script>
 
     var pie = document.getElementById('pie');
     var pieConfig = new Chart(pie, {
@@ -426,6 +378,6 @@
             maintainAspectRatio: true, // Add to prevent default behaviour of full-width/height 
         }
     });
-</script>
+</script> -->
 
 </html>
