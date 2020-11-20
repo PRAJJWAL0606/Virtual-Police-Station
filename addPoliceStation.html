@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Virtual Police</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .list-group-item{
+        margin-bottom:20px !important;
+    }
+    .navbar {
+        padding: 15px 10px;
+        background: white !important;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 1px 1px 22px rgba(0, 0, 0, 1.4) !important;
+        box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
+        margin: 0 !important;
+    }
+    .col-4 {
+        -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 98.5%;
+    max-width: 100%;
+    margin: 10px 12px -11px 10px;
+    background: rgb(113,96,255);
+    z-index: 4;
+    height: 58px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 27px;
+    /* padding: 10px; */
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px;
+}
+.col {
+    overflow-y:scroll;
+    overflow-x:hidden;
+    box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    height: 490px;
+    background: white;
+    border-radius: 0px 0px 20px 20px;
+}
+.form{
+    margin:30px;
+}
+
+.form-control{
+    background:#eee;
+}
+#submit{
+    background:rgba(113,96,255,1) !important;
+}
+
+select{
+  
+  background: rgb(243, 243, 243) !important;
+}
+input{
+  background: rgb(243, 243, 243) !important;
+}
+
+#Description{
+  height: 165px !important;
+  background: rgb(243, 243, 243);
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://thumbs.dreamstime.com/b/solid-purple-gradient-user-icon-web-mobile-design-interface-ui-ux-developer-app-137467998.jpg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Hello User !!
+        </a>
+    </nav>
+
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                      Sign Up User
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">police Station Name</label>
+                            <input type="email" class="form-control" id="policeStationname" placeholder="Enter police Station name">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Address of Police Station</label>
+                            <input type="email" class="form-control" id="address" placeholder="Enter address">
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">latitude of Police Station</label>
+                              <input type="email" class="form-control" id="lat" placeholder="Enter latitude">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">longitude of police Station</label>
+                              <input type="email" class="form-control" id="lang" placeholder="Enter longitude">
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Top Officer 1</label>
+                              <input type="email" class="form-control" id="topOfficer1" placeholder="Enter 1st Top Officer">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Top Officer 2</label>
+                              <input type="email" class="form-control" id="topofficer2" placeholder="Enter 2nd Top Officer">
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Top Officer 3</label>
+                              <input type="email" class="form-control" id="topofficer3" placeholder="Enter 3rd Top Officer ">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">SHO Image(google drive link)</label>
+                              <input type="email" class="form-control" id="SHOimage" placeholder="Enter SHO image">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">SHO Contact Number</label>
+                              <input type="email" class="form-control" id="SHOContactno" placeholder="Enter Contact Number">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">SHO Name</label>
+                              <input type="email" class="form-control" id="SHOname" placeholder="Enter SHO Name">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">SHO Email ID</label>
+                              <input type="email" class="form-control" id="SHOEmail" placeholder="Enter SHO email id">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Police Station Image(google drive link)</label>
+                              <input type="email" class="form-control" id="image" placeholder="Enter police Station image">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Solved Cases</label>
+                              <input type="email" class="form-control" id="SolvedCases" placeholder="Enter solved Cases">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Total Cases</label>
+                              <input type="email" class="form-control" id="TotalCases" placeholder="Enter total cases filed">
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Admin User Name</label>
+                              <input type="email" class="form-control" id="username" placeholder="Enter admin username">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4"> Password</label>
+                              <input type="email" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Admin Contact Number</label>
+                              <input type="email" class="form-control" id="contactno" placeholder="Enter admin contact number">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Admin Email ID</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter admin email id">
+                            </div>
+                        </div>
+
+                        <button id="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+<!-- 
+        <script src="js/jquery.min.js"></script> -->
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/addPoliceStation.js"></script>
+</body>
+</html>

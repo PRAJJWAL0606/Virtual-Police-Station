@@ -9,11 +9,11 @@ button.addEventListener('click', function(e) {
         role: document.getElementById('role').value,
     };
 
-    if (checkEmptyString(person.username))
-    {
-        alert('User name is required');
-        return;
-    }
+    // if (checkEmptyString(person.username))
+    // {
+    //     alert('User name is required');
+    //     return;
+    // }
  
     $.ajax({
         type: "POST",
@@ -23,6 +23,9 @@ button.addEventListener('click', function(e) {
             if (msg.length > 0) {
                 if(msg[0].role == "admin"){  
                     location.href = "/policestationadmin";
+                }
+                else if(msg[0].role="main admin"){
+                    location.href="/addpoliceStation";
                 }
                 else{
                     location.href= "/mainuserpage";
@@ -36,7 +39,7 @@ button.addEventListener('click', function(e) {
     });
 });
 
-function checkEmptyString(val)
-{
-    return (val == undefined || val == null || val.trim().length == 0);
-}
+// function checkEmptyString(val)
+// {
+//     return (val == undefined || val == null || val.trim().length == 0);
+// }

@@ -143,9 +143,9 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+            <img src="https://media.istockphoto.com/vectors/police-icon-design-vector-id1014120888?k=6&m=1014120888&s=170667a&w=0&h=W_OxLN7VMUQqSdE20jIEdalbiAl2QVMRLJPO6LsegYI=" width="30" height="30"
                 class="d-inline-block align-top" alt="">
-            Hello Admin !!
+            Welcome Admin !!
         </a>
     </nav>
     <div class="wrapper d-flex align-items-stretch">
@@ -157,7 +157,7 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="/policestationmain" class="logo" id="policeStationname"></a></h1>
+                <h1><a href="/policestationmain" class="logo" id="policeStationname" style="font-size: 28px;"></a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li>
                         <a href="/policestationadmin">Home</a>
@@ -171,6 +171,9 @@
                     <li>
                         <a href="/admincriminaltracking">Criminals Update</a>
                     </li>
+                    <li>
+                        <a href="/updatePoliceStation">Update Police Station Info.</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -181,122 +184,12 @@
                 <div class="row">
 
                     <div class="col-sm-7" style="overflow:hidden" id="SHOinfo">
-                        <!-- <div class="card member-box">
-                            <span class="shape"></span>
-                            <img class="card-img-top" src="https://pbs.twimg.com/media/EYsl31yUYAAVJAC.jpg" alt="">
-                            <div class="card-body">
-                                <span class="member-degignation" style="display: flex;">
-                                    Secretary
-                                </span>
-
-                                <h4 class="member-title" style="display: flex;">Hashim Ahmed <div
-                                        class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                                        <div class="input-group" style="margin-left: 28px;">
-                                            <input type="text" class="form-control" placeholder="Input group example"
-                                                aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                                        margin-right: 10px;
-                                        margin-left: 10px;
-                                        height:25px !important;
-                                        background-color: rgba(247, 245, 245, 0.933);
-                                    ">
-                                        </div>
-                                        <div class="btn-group mr-2" role="group" aria-label="First group" style="
-                                    height: 25px;
-                                ">
-                                            <button type="button" class="btn btn-secondary" style="
-                                      height: 25px;
-                                      text-align: -webkit-center;
-                                      line-height:0.5 !important;
-                                      background-color: rgb(113,96,255);
-                                      /* padding-bottom: 8px; */
-                                  "> <i class="fa fa-pencil" style="color:white ;line-height: 10px" aria-hidden="true"></i></button>
-                                        </div>
-                                    </div>
-                                </h4>
-                                <small style="display: flex;"><strong>Email: </strong>secretary@basis.org.bd <div
-                                        class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                                        <div class="input-group" style="margin-left: 48px;">
-                                            <input type="text" class="form-control" placeholder="Input group example"
-                                                aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                                        margin-right: 10px;
-                                        margin-left: 10px;
-                                        height:25px !important;
-                                        
-                                        background-color: rgba(247, 245, 245, 0.933);
-                                    ">
-                                        </div>
-                                        <div class="btn-group mr-2" role="group" aria-label="First group" style="
-                                    height: 25px;
-                                ">
-                                            <button type="button" class="btn btn-secondary" style="
-                                      height: 25px;
-                                      text-align: -webkit-center;
-                                      line-height:0.5 !important;
-                                      background-color: rgb(113,96,255);
-                                      /* padding-bottom: 8px; */
-
-                                  "> <i class="fa fa-pencil" style="color:white;line-height: 10px" aria-hidden="true"></i></button>
-                                        </div>
-                                    </div>
-                                </small>
-                                <small style="display: flex;"><strong>Phone: </strong> 09612322747 (Ext: 103)<div
-                                        class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                                        <div class="input-group" style="margin-left:  40px;">
-                                            <input type="text" class="form-control" placeholder="Input group example"
-                                                aria-label="Input group example" aria-describedby="btnGroupAddon" style="
-                                        margin-right: 10px;
-                                        margin-left: 10px;
-                                        height:25px !important;
-                                        
-                                        background-color: rgba(247, 245, 245, 0.933);
-                                    ">
-                                        </div>
-                                        <div class="btn-group mr-2" role="group" aria-label="First group" style="
-                                    height: 25px;
-                                ">
-                                            <button type="button" class="btn btn-secondary" style="
-                                      height: 25px;
-                                      text-align: -webkit-center;
-                                      line-height:0.5 !important;
-                                      background-color: rgb(113,96,255);
-                                      /* padding-bottom: 8px; */
-                                  "> <i class="fa fa-pencil" style="color:white;line-height: 10px;" aria-hidden="true"></i>
-                                            </button>
-                                        </div>
-                                    </div></small>
-                            </div>
-                        </div> -->
+                       
                     </div>
                     <div class="col-sm-4" style="overflow-y: scroll;">
                         <h1 style="text-align: center;font-size:40px">Alerts</h1>
                         <div class="list-group" id="alerts">
-                            <!-- <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">Name : Ashish</h5>
-                                    <small>12:00</small>
-                                </div>
-                                <p class="mb-1">Phone No : 4892429202</p>
-                                <p class="mb-1">Location : Adarsh Nagar</p>
-                                <button type="button" class="btn btn-success">Confirm</button>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">List group item heading</h5>
-                                    <small class="text-muted">3 days ago</small>
-                                </div>
-                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                    risus varius blandit.</p>
-                                <small class="text-muted">Donec id elit non mi porta.</small>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">List group item heading</h5>
-                                    <small class="text-muted">3 days ago</small>
-                                </div>
-                                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                                    risus varius blandit.</p>
-                                <small class="text-muted">Donec id elit non mi porta.</small>
-                            </a> -->
+                        
                         </div>
                     </div>
                 </div>

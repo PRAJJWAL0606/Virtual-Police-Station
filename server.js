@@ -5,6 +5,7 @@ const mongodb = require("mongodb");
 const app = express();
 const dialogflow = require('dialogflow');
 const uuid = require('uuid');
+var nodemailer = require("nodemailer");
 
 const PORT = process.env.port || 8080;
 app.use(express.static("public"));
@@ -45,6 +46,7 @@ app.get("/chatbot", (req, res) => {
 
 var userid=null;
 var policestationid=null;
+var policestationname = "null";
 
 app.get("/policestationmain", (req, res) => {
   res.sendFile(__dirname + "/policestationmain.html");
@@ -99,6 +101,18 @@ app.get("/admincriminaltracking", (req, res) => {
   res.sendFile(__dirname + "/PoliceAdminCriminal.html");
 });
 
+app.get("/signup", (req, res) => {
+  res.sendFile(__dirname + "/signup.html");
+});
+
+
+app.get("/addpoliceStation", (req, res) => {
+  res.sendFile(__dirname + "/addPoliceStation.html");
+});
+
+app.get("/updatePoliceStation", (req, res) => {
+  res.sendFile(__dirname + "/updatePoliceStation.html");
+});
 
 app.post("/login", (req, res) => {
   var username = req.body.username;
@@ -551,9 +565,22 @@ app.get('/getalerts',(req,res) =>{
 });
 
 
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+  host: "smtp.gmail.com",
+  secure: true,
+  port: 465,
+  auth: {
+    user: "GBM918211@gmail.com",
+    pass: "Pass#123!",
+  },
+});
+
+
 
 app.post("/confirmalert", (req, res) => {
   var deletedata = req.body;
+  var emailid = req.body.emailid;
 
   db.collection("Alerts").remove(
     { _id: new mongodb.ObjectId(deletedata.idnumber) },
@@ -561,7 +588,21 @@ app.post("/confirmalert", (req, res) => {
       if (err) {
         return console.log(err);
       }
-      console.log("click added to db");
+      let HelperOptions = {
+        from: "GBM918211@gmail.com",
+        to: emailid,
+        subject: "Approaching in Few Minutes",
+        text:
+          "Dear Citizen, we are approaching you in few seconds and trackin gyour location and the police station name is "+policestationname,
+      };
+      transporter.sendMail(HelperOptions, (error, info) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Message sent");
+        }
+      });
+      
       res.send([
         {
           message: "Request successfully logged",
@@ -575,13 +616,87 @@ app.post("/confirmalert", (req, res) => {
 
 
 app.get('/getpolicestationdetails',(req,res) =>{
-
   db.collection("PoliceStation").find({ _id: new mongodb.ObjectId(policestationid)}).toArray((err, result) => {
       if (err) {
         res.send(err);
       } else {
+        policestationname = result[0].policeStationname;
         res.send(result);
       }
     });
+});
 
+
+
+
+app.post("/signupnewuser", (req, res) => {
+  var newuser = req.body;
+
+  db.collection("userDetails").save(newuser, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    console.log("click added to db");
+    res.send([
+      {
+        message: "Request successfully logged",
+        status: true,
+      },
+    ]);
+  });
+
+});
+
+
+
+
+app.post("/addnewpolicestation", (req, res) => {
+  var newps = req.body;
+
+  db.collection("PoliceStation").save(newps, (err, result) => {
+    if (err) {
+      return console.log(err);
+    }
+
+    db.collection("PoliceStation").find().sort({"_id" : -1}).limit(1).toArray(function (err1, result1){
+      if (err1){
+        return console.log(err1);
+      }
+
+      console.log("click added to db");
+
+      res.send([
+        {
+          message: result1[0]._id.toString(),
+          status: true,
+        },
+      ]);
+    });
+  });
+});
+
+
+
+app.post("/updatepolicestation", (req, res) => {
+  var fieldname = req.body.fieldname;
+  var info = req.body.info;
+
+  db.collection("PoliceStation").find({_id: new mongodb.ObjectId(policestationid)}).toArray((err, result) => {
+      if (err) {
+        res.send(err);
+      } else {
+        result[0][fieldname] = info;
+        db.collection("PoliceStation").save(result[0], function (err, res) {
+          if (err) res.send(err);
+          console.log("1 document updated");
+        });
+        res.send([
+          {
+            message: "Request successfully logged",
+            status: true,
+          },
+        ]);
+      }
+    });
 });

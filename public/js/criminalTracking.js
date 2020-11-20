@@ -1,5 +1,7 @@
 const button = document.getElementById('submit');
+var psname = document.getElementById('policeStationname')
 
+psname.textContent = sessionStorage.getItem('policestationname');
 button.addEventListener('click', function(e) {
 
   console.log('button was clicked');

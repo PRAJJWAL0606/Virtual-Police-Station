@@ -73,7 +73,8 @@ function alertPoliceStation(idnumber) {
                     var test1 = {
                         'policeStationid': idnumber,
                         'name':msg[0].username,
-                        'contactno':msg[0].contactno
+                        'contactno':msg[0].contactno,
+                        'emailid':msg[0].emailid
                     };
                     $.ajax({
                         type: "POST",
