@@ -104,7 +104,7 @@ $(document).ready(function (){
                                 var btn = document.createElement('button');
                                 btn.setAttribute('class','btn btn-success');
                                 btn.textContent = "Confirm";
-                                btn.setAttribute('onClick', "confirmalert('" + msg[x]._id + ","+ msg[x].emailid + "'); return false;");
+                                btn.setAttribute('onClick', "confirmalert('" + msg[x]._id + "','"+ msg[x].emailid + "'); return false;");
 
                                 small.appendChild(btn);
                                 maindiv.appendChild(small);
@@ -126,11 +126,6 @@ $(document).ready(function (){
     });
 });
 
-
-
-$(document).ready(function (){
-    
-});
 
 
 

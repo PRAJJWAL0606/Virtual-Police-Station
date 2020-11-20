@@ -24,7 +24,7 @@ button.addEventListener('click', function(e) {
                 if(msg[0].role == "admin"){  
                     location.href = "/policestationadmin";
                 }
-                else if(msg[0].role="main admin"){
+                else if(msg[0].role=="main admin"){
                     location.href="/addpoliceStation";
                 }
                 else{

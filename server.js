@@ -569,11 +569,11 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
   secure: true,
-  port: 465,
+  port: 587,
   auth: {
     user: "GBM918211@gmail.com",
-    pass: "Pass#123!",
-  },
+    pass: "Pass#1234!",
+  }, 
 });
 
 
