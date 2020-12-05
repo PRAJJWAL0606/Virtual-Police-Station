@@ -1,5 +1,6 @@
 $(document).ready(function (){
-    
+    var psname = document.getElementById('policeStationname');
+    psname.textContent = sessionStorage.getItem('policestationname');
     var tracking = document.getElementById('Tracking');
     var filed = document.getElementById('Filed');
     var completed = document.getElementById('Completed');

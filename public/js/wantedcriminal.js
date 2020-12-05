@@ -1,4 +1,6 @@
 $(document).ready(function (){
+    var psname = document.getElementById('policeStationname');
+    psname.textContent = sessionStorage.getItem('policestationname');
     maincol = document.getElementById('criminallist');
     $.ajax({
         type: "GET",

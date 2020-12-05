@@ -8,6 +8,8 @@ $(document).ready(function (){
             if (msg.length > 0) {
                 var mainele = document.getElementById('policeStationname');
                 mainele.textContent = msg[0].policeStationname;
+                sessionStorage.setItem('policestationname', msg[0].policeStationname);
+                
                 //sho card
                 var shoinfo = document.getElementById('SHOinfo');
                 var cardmember = document.createElement('div');

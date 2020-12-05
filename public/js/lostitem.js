@@ -1,5 +1,9 @@
+var psname = document.getElementById('policeStationname');
+psname.textContent = sessionStorage.getItem('policestationname');
+
 $(document).ready(function (){
     maincol = document.getElementById('itemslist');
+
     $.ajax({
         type: "GET",
         url: "/getlostitems",

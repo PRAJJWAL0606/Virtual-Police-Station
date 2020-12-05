@@ -1,7 +1,5 @@
 var psname = document.getElementById('policeStationname')
-
 psname.textContent = sessionStorage.getItem('policestationname');
-
 const button = document.getElementById('submit');
 
 button.addEventListener('click', function(e) {

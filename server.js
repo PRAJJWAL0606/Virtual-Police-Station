@@ -307,7 +307,7 @@ app.get('/getlostitems',(req,res) =>{
 app.post("/addcriminal", (req, res) => {
   var criminal = req.body;
   var criminaldetail = {
-    'policestationid':policestationid,
+    'policeStationid':policestationid,
     'name': criminal.name,    
     'image': criminal.image,
     'type': criminal.type,
@@ -399,7 +399,7 @@ app.get('/getcriminallist',(req,res) =>{
 app.post("/addinmate", (req, res) => {
   var criminal = req.body;
   var criminaldetail = {
-    'policestationid':policestationid,
+    'policeStationid':policestationid,
     'name': criminal.name,    
     'image': criminal.image,
     'type': criminal.type,
