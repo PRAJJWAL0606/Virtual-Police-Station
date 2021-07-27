@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Virtual Police</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<style>
+    /* canvas{
+        height: 278px !important;
+    } */
+    #recentResultsChart {
+        height: 278px !important;
+    }
+
+    #content {
+        background: white;
+    }
+
+    .navbar {
+        padding: 15px 10px;
+        background: white !important;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 1px 1px 22px rgba(0, 0, 0, 1.4) !important;
+        box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
+        margin: 0 !important;
+    }
+
+    @media (min-width: 576px) {
+        .col-sm-7 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 58.33333%;
+            flex: 0 0 58.33333%;
+            max-width: 48.33333%;
+            height: 350px;
+            background: white;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.1)
+        }
+
+    }
+
+    @media (min-width: 576px) {
+        .col-sm-4 {
+            flex: 0 0 47.9%;
+            max-width: 48.33333%;
+            height: 350px;
+            background: white;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.1)
+        }
+    }
+
+    .col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        background: white;
+        margin: 10px;
+        height: 190px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.1)
+    }
+
+
+    /*new*/
+    /*======================basis-member============================*/
+
+    .member-box {
+        border-radius: 20px;
+        border: none;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .member-box .shape {
+        width: 300px;
+        height: 300px;
+        background: rgba(113, 96, 255, 1);
+        opacity: 0.2;
+        position: absolute;
+        top: -47px;
+        right: -186px;
+        transform: rotate(45deg);
+    }
+
+    .member-box .card-img-top {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin: 20px auto;
+        text-align: center;
+        box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .member-box:hover .card-img-top {
+        box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1)
+    }
+
+    .member-box .member-degignation {
+        color: var(--green);
+    }
+
+
+    .member-box small {
+        font-size: 12px;
+    }
+
+    .member-box .social a {
+        font-size: 15px;
+        color: var(--green);
+        padding: 10px;
+    }
+
+    .member-box .card-footer {
+        background-color: transparent;
+        border: 0;
+    }
+
+    .imagetopofficers {
+        margin: 10px !important;
+        border-radius: 50% !important;
+        height: 80px !important;
+        width: 80px !important;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://media.istockphoto.com/vectors/police-icon-design-vector-id1014120888?k=6&m=1014120888&s=170667a&w=0&h=W_OxLN7VMUQqSdE20jIEdalbiAl2QVMRLJPO6LsegYI=" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Welcome Admin !!
+        </a>
+    </nav>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4 pt-5">
+                <h1><a href="/policestationmain" class="logo" id="policeStationname" style="font-size: 28px;"></a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/policestationadmin">Home</a>
+                    </li>
+                    <li>
+                        <a href="/adminfirtracking">Track FIR and Update</a>
+                    </li>
+                    <li>
+                        <a href="/admininmatetracking">Inmate Tracking and Update</a>
+                    </li>
+                    <li>
+                        <a href="/admincriminaltracking">Criminals Update</a>
+                    </li>
+                    <li>
+                        <a href="/updatePoliceStation">Update Police Station Info.</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-7" style="overflow:hidden" id="SHOinfo">
+                       
+                    </div>
+                    <div class="col-sm-4" style="overflow-y: scroll;">
+                        <h1 style="text-align: center;font-size:40px">Alerts</h1>
+                        <div class="list-group" id="alerts">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div style="display:flex">
+                            <div style="float: left;
+                      text-align: center;
+                      font-size: 20px;
+                      margin: 10px;">
+                                Cases Solved Vs Pending
+                            </div>
+                            <div style="float: right;">
+                                <canvas class="pie-chart" id="pie">
+                                </canvas>
+                                <br>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="overflow-y:scroll;overflow-x: hidden;">
+                        <h4 style="text-align:center">Citizen rights</h4>
+                        
+                        <ul class="list-group">
+                            <li class="list-group-item">Any citizen who has knowledge of preparation or commission of
+                                any crime
+                                or who has any complaint to make with reference to the duties of the Police as
+                                enumerated above can approach the Police Station and give such information
+                                available with him or her</li>
+                            <li class="list-group-item">According to the Code of Criminal Procedure, any officer and
+                                above of the
+                                rank of Head constable can function as the Station House Officer in-charge of
+                                the Police Station in the absence of Police Sub-Inspector, the senior most Asst
+                                Sub-Inspector present at the Police Station or the senior most Head constable
+                                present functions as the Station House Officer.</li>
+                            <li class="list-group-item">Any private person may arrest or cause to be arrested any person
+                                who in
+                                his presence commits a non-bail able and cognizable offence, or any
+                                proclaimed offender, and, without unnecessary delay, shall make over or
+                                cause to be made over any person so arrested to a police officer, or, in the
+                                absence of a police officer take such person or cause him to be taken in
+                                custody to the nearest police station.</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="overflow: scroll;">
+                        <h4 style="text-align:center">
+                            Top Officers
+                        </h4>
+                        <div style="display: flex;" id="topofficers">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="js/policeStationadmin.js"></script>
+            <script src="js/popper.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
+</body>
+<!-- <script>
+
+    var pie = document.getElementById('pie');
+    var pieConfig = new Chart(pie, {
+        type: 'pie',
+        data: {
+            labels: ['data-1', 'data-2'],
+            datasets: [{
+                label: '# of data',
+                data: [40, 80],
+                backgroundColor: ['rgb(242, 230, 255)', 'rgba(113,96,255,1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true, // Instruct chart js to respond nicely.
+            maintainAspectRatio: true, // Add to prevent default behaviour of full-width/height 
+        }
+    });
+</script> -->
+
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Virtual Police</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .list-group-item{
+        margin-bottom:20px !important;
+    }
+    .navbar {
+        padding: 15px 10px;
+        background: white !important;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 1px 1px 22px rgba(0, 0, 0, 1.4) !important;
+        box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
+        margin: 0 !important;
+    }
+    .col-4 {
+        -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 98.5%;
+    max-width: 100%;
+    margin: 10px 12px -11px 10px;
+    background: rgb(113,96,255);
+    z-index: 4;
+    height: 58px;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 27px;
+    /* padding: 10px; */
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px;
+}
+.col {
+    overflow-y:scroll;
+    overflow-x:hidden;
+    box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    height: 490px;
+    background: white;
+    border-radius: 0px 0px 20px 20px;
+}
+.form{
+    margin:30px;
+}
+
+.form-control{
+    background:#eee;
+}
+#submit{
+    background:rgba(113,96,255,1) !important;
+}
+
+select{
+  
+  background: rgb(243, 243, 243) !important;
+}
+input{
+  background: rgb(243, 243, 243) !important;
+}
+
+#Description{
+  height: 165px !important;
+  background: rgb(243, 243, 243);
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://thumbs.dreamstime.com/b/solid-purple-gradient-user-icon-web-mobile-design-interface-ui-ux-developer-app-137467998.jpg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Hello User !!
+        </a>
+    </nav>
+    <!-- <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div> -->
+            <!-- <div class="p-4 pt-5">
+                <h1><a href="/policestationmain" class="logo">Police Station Sec-31, Faridabad</a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/policestationmain/">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">FIR</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="/filefir">File FIR</a>
+                            </li>
+                            <li>
+                                <a href="/firtracking">Track FIR</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/chatbot">Help</a>
+                    </li>
+                    <li>
+                        <a href="/missingperson">Missing People</a>
+                    </li>
+                    <li>
+                        <a href="/wantedcriminals">Wanted Criminals</a>
+                    </li>
+                    <li>
+                        <a href="/lostandfound">Lost and Found</a>
+                    </li>
+                </ul>
+            </div> -->
+        </nav>
+
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                      Sign Up User
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form">
+                        <!-- <div class="form-row"> -->
+                          <div class="form-group">
+                            <label for="inputEmail4">UserName</label>
+                            <input type="email" class="form-control" id="username" placeholder="Enter username">
+                          </div>
+                        <div class="form-group">
+                          <label for="inputAddress2">Email ID</label>
+                          <!-- <label for="inputAddress">
+                            (Only required in case of Person missing or Lost Item)</label> -->
+                          <input type="text" class="form-control" id="email" placeholder="Enter email id">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Contact Number</label>
+                            <!-- <label for="inputAddress">
+                              (Only required in case of Person missing or Lost Item)</label> -->
+                            <input type="text" class="form-control" id="contactno" placeholder="Enter Contact Number">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputAddress2">Password</label>
+                            <!-- <label for="inputAddress">
+                              (Only required in case of Person missing or Lost Item)</label> -->
+                            <input type="text" class="form-control" id="password" placeholder="Enter Password">
+                          </div>
+                        <!-- <div class="form-group">
+                          <label class="form-check-label" for="gridCheck">
+                          </label>
+                          <textarea type="text" class="form-control" placeholder="Enter Description" id="Description"></textarea>
+                        </div> -->
+                        <button id="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+<!-- 
+        <script src="js/jquery.min.js"></script> -->
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/signup.js"></script>
+</body>
+</html>

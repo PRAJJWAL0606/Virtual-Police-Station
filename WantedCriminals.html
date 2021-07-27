@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Virtual Police</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    .heading{
+        background: rgb(113,96,255);
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+    height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    position: fixed;
+    width: 74.2% !important;
+  z-index: 2;
+    }
+    ul{
+        padding-top: 60px !important;
+    }
+    .col-8{
+        background: white;
+    height: 550px;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.1);
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding:0;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    }
+
+
+    .navbar {
+        padding: 15px 10px;
+        background: white !important;
+        border: none;
+        border-radius: 0;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 1px 1px 22px rgba(0, 0, 0, 1.4) !important;
+        box-shadow: 1px 1px 22px rgb(0, 0, 0, 1.4);
+        margin: 0 !important;
+    }
+    .card{
+        max-width: 100% !important;
+    margin: 20px !important;
+    }
+    ::-webkit-scrollbar {
+  width: 10px;
+}
+
+.logo{
+  font-size: 28px !important;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius:40px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius:40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt="">
+            Bootstrap
+        </a>
+    </nav>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars" style="color:rgb(113,96,255)"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo" id="policeStationname"></a></h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a href="/policestationmain">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">FIR</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="/filefir">File FIR</a>
+                            </li>
+                            <li>
+                                <a href="/firtracking">Track FIR</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/chatbot">Help</a>
+                    </li>
+                    <li>
+                        <a href="/missingperson">Missing People</a>
+                    </li>
+                    <li>
+                        <a href="/wantedcriminals">Wanted Criminals</a>
+                    </li>
+                    <li>
+                        <a href="/lostandfound">Lost and Found</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container">
+                <div class="row">
+                  <div class="col-8">
+                    <div class="heading">Wanted Criminals</div>
+                    <ul class="list-group" id="criminallist">
+                        <!-- <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://images.squarespace-cdn.com/content/v1/548ec3bee4b068057bfb6db7/1555524365342-FSB67T1LCR7M776FHNTB/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/palm+trees+bag.jpg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://a0.amlimg.com/NjQzMDQ1MjExMGRjNDg3ODBiMzg1OGI5MmFjNWYzODfHvCOLYwHnStm-__ttdsNDaHR0cDovL21lZGlhLmFkc2ltZy5jb20vMGIwM2FiNjRmNmMwMWFiYTMxZDc0NTFkMmUwMWZlOTczYjI4MjA1YWMwOGQ5NGI3YjI4YzM1M2UyNTg2ZWU5Yy5qcGd8fHx8fHwzOTR4NTI1fGh0dHA6Ly93d3cuYWR2ZXJ0cy5pZS9zdGF0aWMvaS93YXRlcm1hcmsucG5nfHx8.jpg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row no-gutters">
+                              <div class="col-md-4">
+                                <img src="https://www.uni-koblenz-landau.de/en/unicard/media/idcard.jpeg" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/wantedcriminal.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>
+
+
+

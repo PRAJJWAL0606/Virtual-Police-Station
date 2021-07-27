@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <title>Virtual Police</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,900|Poppins:400,500");
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-text-size-adjust: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://cms.qz.com/wp-content/uploads/2018/08/india-bhima-koregaon-arrests.jpg?quality=75&strip=all&w=1600&h=900&crop=1"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+      /* background-image: url(''); */
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      height: 100vh;
+      margin: auto;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .app {
+      background-color: #fff;
+      width: 700px;
+      min-height: 560px;
+      margin: auto;
+      border-radius: 5px;
+      padding: 1em;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-weight: normal;
+      margin: 10px auto;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(113,96,255);
+    }
+
+    p {
+      font-size: 13px;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .intro_viewer {
+      width: 100%;
+      height: 450px;
+      background: rgba(113,96,255,1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      padding: 4em 3em;
+      transition: 0.45s ease all 0.1s;
+      transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+    }
+    .active {
+      height: 200px;
+    }
+    .img {
+        width: 60%;
+    height: 311px;
+    margin-left: 7em;
+    margin-right: 2em;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 4.5em;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      background: #fff;
+      padding: 10px;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      transition: 0.45s ease all 0.1s;
+      transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+    }
+    .toggle-btn {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 0.5em;
+      border: none;
+      background-color: #21d4fd;
+      background-image: linear-gradient(19deg, #21d4fd 0%, rgb(113,96,255) 100%);
+
+      outline: none;
+    }
+
+    .form {
+      width: 90%;
+      height: 415px;
+      background: #fff;
+      box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      bottom: 7em;
+      left: 0;
+      right: 0;
+      padding: 1em;
+      margin: auto;
+      border-radius: 5px;
+      transition: 0.45s ease all 0.1s;
+      z-index: 0;
+      -webkit-transform: translateY(30px);
+      transform: translateY(30px);
+      transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+      visibility: hidden;
+      opacity: 0;
+      text-align: center;
+    }
+    .form p {
+      color: grey;
+    }
+    .form input {
+      width: 50%;
+      padding: 10px 15px;
+      margin: 15px auto;
+      border-radius: 100px;
+      border: none;
+      background: rgb(255, 255, 255, 0.3);
+      font-family: "Poppins", sans-serif;
+      outline: none;
+      color: #333;
+      border: 1px solid rgba(113,96,255);
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    input::placeholder {
+      color: #333;
+      font-size: 13px;
+    }
+    .form input:focus {
+      box-shadow: 0 4px 24px -1px rgba(22, 42, 90, 0.16);
+      border-color: #fff;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0.5em;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      transition: 0.45s ease all 0.1s;
+      z-index: 0;
+      visibility: hidden;
+      opacity: 0;
+    }
+    footer p {
+      color: #333;
+    }
+    footer a {
+      font-size: 32px;
+      margin: 0 10px;
+      color: rgb(113,96,255);
+      -webkit-transform: translateY(30px);
+      transform: translateY(30px);
+      transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all 0.1s;
+    }
+
+    @media screen and (max-width: 640px) {
+      .app {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+      }
+      header {
+        width: 90%;
+        height: 250px;
+      }
+      .inputs {
+        margin: 0;
+      }
+      input,
+      .toggle-btn {
+        padding: 18px 15px;
+      }
+    }
+    .open-login .form {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+      opacity: 1;
+      transition-delay: 0.15s;
+      visibility: visible;
+    }
+
+    .open-login .intro_viewer {
+      height: 200px;
+      transition-delay: 0.25s;
+    }
+    .display {
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+      display: none;
+    }
+    .open-login .none {
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+    }
+    
+    .open-login .display {
+      opacity: 0;
+      visibility: visible;
+      display: block;
+    }
+    .open-login .btn {
+      transform: rotate(90deg);
+      transition-delay: 0.35s;
+    }
+    .open-login footer {
+      opacity: 1;
+      transition-delay: 0.5s;
+      visibility: visible;
+    }
+    .submit {
+        background-color: rgb(113,96,255);
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 35px 2px;
+    cursor: pointer;
+    border-radius: 40px;
+    height: 45px;
+    width: 166px;
+}
+  </style>
+  <body>
+    <div class="app">
+      <div class="intro_viewer">
+        <h2 class="display">Welcome to Cloxe</h2>
+        <h2 class="none">Close is closing</h2>
+        <p class="none">
+          Analyise data, start promoting and build your audience
+        </p>
+        <div class="img none">
+          <img
+            src="/images/police.png"
+          />
+        </div>
+      </div>
+
+      <div class="form">
+        <h3>Welcome Bock, Login</h3>
+        <input type="text" name="" placeholder="username" id="username"/>
+        <input type="text" name="" placeholder="role('citizen','admin','main admin')" id="role"/>
+        <input type="password" name="" placeholder="password" id = "password"/>
+        <br>
+        <button class="submit" id="loginsubmit">Log In</button>
+        
+    </div>
+
+      <div class="btn">
+        <button class="toggle-btn">
+          <svg
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:cc="http://creativecommons.org/ns#"
+            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            xmlns:svg="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+            version="1.1"
+            x="0px"
+            y="0px"
+            viewBox="0 0 100 125"
+          >
+            <g transform="translate(0,-952.36218)">
+              <path
+                style="
+                  font-size: medium;
+                  font-style: normal;
+                  font-variant: normal;
+                  font-weight: normal;
+                  font-stretch: normal;
+                  text-indent: 0;
+                  text-align: start;
+                  text-decoration: none;
+                  line-height: normal;
+                  letter-spacing: normal;
+                  word-spacing: normal;
+                  text-transform: none;
+                  direction: ltr;
+                  block-progression: tb;
+                  writing-mode: lr-tb;
+                  text-anchor: start;
+                  baseline-shift: baseline;
+                  opacity: 1;
+                  color: #fff;
+                  fill: #fff;
+                  fill-opacity: 1;
+                  fill-rule: nonzero;
+                  stroke: none;
+                  stroke-width: 4;
+                  marker: none;
+                  visibility: visible;
+                  display: inline;
+                  overflow: visible;
+                  enable-background: accumulate;
+                  font-family: Sans;
+                  -inkscape-font-specification: Sans;
+                "
+                d="M 67.90625 25.96875 A 2.0002 2.0002 0 0 0 66.65625 29.46875 L 86.84375 48 L 8 48 L 7.8125 48 C 6.7651593 48.049 5.8571564 49.04635 5.90625 50.09375 C 5.955344 51.14105 6.9526789 52.0493 8 52 L 86.84375 52 L 66.65625 70.5 A 2.0022756 2.0022756 0 1 0 69.34375 73.46875 L 93.34375 51.46875 A 2.0002 2.0002 0 0 0 93.34375 48.5 L 69.34375 26.5 A 2.0002 2.0002 0 0 0 67.90625 25.96875 z "
+                transform="translate(0,952.36218)"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <footer>
+        <a href="/signup" style="font-size: 14px;
+        cursor: pointer;">Or Signup with</a>
+      </footer>
+    </div>
+  </body>
+  <script src="/js/login.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      var $body = $("body");
+      var $btnOpen = $(".toggle-btn");
+
+      $btnOpen.click(function () {
+        $body.toggleClass("open-login");
+      });
+    });
+
+//     const button1 = document.getElementById('loginsubmit');
+// button1.addEventListener('click', function (e) {
+//     location.href='/mainuserpage';
+// });
+
+  </script>
+
+</html>
